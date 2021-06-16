@@ -46,7 +46,7 @@ int main() {
 
     while (true) {
         // gets a mark for the list
-        std::cout << "Enter a mark between 0 to 100. Enter -1 to stop: ";
+        std::cout << " Enter a mark between 0 to 100. Enter -1 to stop: ";
         std::cin >> userMarkString;
 
         try {
@@ -58,16 +58,15 @@ int main() {
                 // breaks from the loop
                 break;
             } else if (userMarkInt < 0 || userMarkInt > 100) {
-                std::cout << userMarkInt << "is not between 0 and 100.";
+                std::cout << userMarkInt << " is not between 0 and 100.";
             } else if (userMarkFloat != userMarkInt) {
-                std::cout <<userMarkString << "is not whole number.";
+                std::cout << userMarkString << " is not whole number.";
             } else {
                 // adds the marks into the list
                 listMarks.push_back(userMarkInt);
             }
         } catch (std::invalid_argument) {
             // The user did not enter an integer.
-            std::cout << "\n";
             std::cout << "Please enter a valid number, try again.\n";
         }
     }
